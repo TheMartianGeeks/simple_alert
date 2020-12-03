@@ -35,20 +35,71 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         title: Text(widget.title),
       ),
-      body: Center(
-        child: FlatButton(
-          child: Text('Create user'),
-          onPressed: () {
-            SimpleAlert.success(
-              context,
-              title: 'Create user',
-              message:
-                  'Neque porro quisquam est qui dolorem ipsum quia dolor sit amet...',
-              onCancel: () {
-                print('cancel');
+      body: Container(
+        width: MediaQuery.of(context).size.width,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            RaisedButton(
+              child: Text('Success alert'),
+              color: Colors.lightGreen,
+              onPressed: () {
+                SimpleAlert.success(
+                  context,
+                  title: 'Create user',
+                  message:
+                      'Neque porro quisquam est qui dolorem ipsum quia dolor sit amet...',
+                  onCancel: () {
+                    print('cancel');
+                  },
+                );
               },
-            );
-          },
+            ),
+            RaisedButton(
+              child: Text('Danger alert'),
+              color: Colors.red,
+              onPressed: () {
+                SimpleAlert.danger(
+                  context,
+                  title: 'Create user',
+                  message:
+                      'Neque porro quisquam est qui dolorem ipsum quia dolor sit amet...',
+                  onCancel: () {
+                    print('cancel');
+                  },
+                );
+              },
+            ),
+            RaisedButton(
+              child: Text('Infos alert'),
+              onPressed: () {
+                SimpleAlert.info(
+                  context,
+                  title: 'Create user',
+                  message:
+                      'Neque porro quisquam est qui dolorem ipsum quia dolor sit amet...',
+                  onCancel: () {
+                    print('cancel');
+                  },
+                );
+              },
+            ),
+            RaisedButton(
+              child: Text('Warning alert'),
+              onPressed: () {
+                SimpleAlert.warning(
+                  context,
+                  title: 'Create user',
+                  message:
+                      'Neque porro quisquam est qui dolorem ipsum quia dolor sit amet...',
+                  onCancel: () {
+                    print('cancel');
+                  },
+                );
+              },
+            ),
+          ],
         ),
       ), // This trailing comma makes auto-formatting nicer for build methods.
     );
