@@ -1,8 +1,8 @@
 name: simple_alert
-description: A new Flutter package project.
+description: To be able to show a custom alert box easily.
 version: 0.0.1
-author:
-homepage:
+author: The Martian Geeks
+homepage: https://github.com/TheMartianGeeks/simple_alert
 
 environment:
   sdk: ">=2.7.0 <3.0.0"
