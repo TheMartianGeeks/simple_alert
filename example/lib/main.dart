@@ -42,9 +42,8 @@ class _MyHomePageState extends State<MyHomePage> {
             SimpleAlert.success(
               context,
               title: 'Create user',
-              message: 'Your have created new user successfully',
-              cancelTxt: 'Annuler',
-              confirmTxt: 'Valider',
+              message:
+                  'Neque porro quisquam est qui dolorem ipsum quia dolor sit amet...',
               onCancel: () {
                 print('cancel');
               },

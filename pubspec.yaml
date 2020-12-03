@@ -1,7 +1,7 @@
 name: simple_alert
 description: To be able to show a custom alert box easily.
 version: 0.0.1
-author: The Martian Geeks
+author: The Martian Geeks <contact@martiangeeks.com>
 homepage: https://github.com/TheMartianGeeks/simple_alert
 
 environment:
@@ -23,9 +23,8 @@ dev_dependencies:
 flutter:
 
   # To add assets to your package, add an assets section, like this:
-  # assets:
-  #   - images/a_dot_burr.jpeg
-  #   - images/a_dot_ham.jpeg
+  #assets:
+  #  - assets/icons/
   #
   # For details regarding assets in packages, see
   # https://flutter.dev/assets-and-images/#from-packages

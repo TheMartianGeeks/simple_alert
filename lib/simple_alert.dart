@@ -2,6 +2,9 @@ library simple_alert;
 
 import 'package:flutter/material.dart';
 
+import 'content/empty_title.dart';
+import 'content/with_title.dart';
+
 /// A Simple Alert box.
 class SimpleAlert {
   static Future success(
@@ -18,107 +21,79 @@ class SimpleAlert {
       context: context,
       builder: (BuildContext context) {
         return title != null
-            ? hasTitle(
-                title,
-                message,
-                onCancel,
-                confirmTxt,
-                context,
-                cancelTxt,
-                onSuccess,
-              )
+            ? withTitle(title, message, onCancel, confirmTxt, context,
+                cancelTxt, onSuccess)
             : emptyTitle(
-                message,
-                onCancel,
-                confirmTxt,
-                context,
-                cancelTxt,
-                onSuccess,
-              );
+                message, onCancel, confirmTxt, context, cancelTxt, onSuccess);
       },
     );
   }
 
-  static AlertDialog hasTitle(
+  static Future danger(
+    BuildContext context, {
     String title,
-    String message,
-    Function onCancel,
-    String confirmTxt,
-    BuildContext context,
+    @required String message,
     String cancelTxt,
+    String confirmTxt,
     Function onSuccess,
-  ) {
-    return AlertDialog(
-      title: Text(title),
-      content: Text(message),
-      actions: <Widget>[
-        Visibility(
-          visible: onCancel != null,
-          child: FlatButton(
-            child: Text(cancelTxt ?? 'cancel'),
-            onPressed: () {
-              if (onCancel != null) {
-                onCancel();
-              }
-              Navigator.of(context).pop();
-            },
-          ),
-        ),
-        FlatButton(
-          child: Text(confirmTxt ?? 'ok'),
-          onPressed: () {
-            if (onSuccess != null) {
-              onSuccess();
-            }
-            Navigator.of(context).pop();
-          },
-        ),
-      ],
+    Function onCancel,
+  }) {
+    return showDialog(
+      barrierDismissible: false,
+      context: context,
+      builder: (BuildContext context) {
+        return title != null
+            ? withTitle(title, message, onCancel, confirmTxt, context,
+                cancelTxt, onSuccess)
+            : emptyTitle(
+                message, onCancel, confirmTxt, context, cancelTxt, onSuccess);
+      },
     );
   }
 
-  static AlertDialog emptyTitle(
-    String message,
-    Function onCancel,
-    String confirmTxt,
-    BuildContext context,
+  static Future info(
+    BuildContext context, {
+    String title,
+    @required String message,
     String cancelTxt,
+    String confirmTxt,
     Function onSuccess,
-  ) {
-    return AlertDialog(
-      title: Text('Success'),
-      content: Text(message),
-      actions: <Widget>[
-        Visibility(
-          visible: onCancel != null,
-          child: FlatButton(
-            child: Text(confirmTxt ?? 'cancel'),
-            onPressed: () {
-              if (onCancel != null) {
-                onCancel();
-              }
-              Navigator.of(context).pop();
-            },
-          ),
-        ),
-        FlatButton(
-          child: Text(cancelTxt ?? 'ok'),
-          onPressed: () {
-            if (onSuccess != null) {
-              onSuccess();
-            }
-            Navigator.of(context).pop();
-          },
-        ),
-      ],
+    Function onCancel,
+  }) {
+    return showDialog(
+      barrierDismissible: false,
+      context: context,
+      builder: (BuildContext context) {
+        return title != null
+            ? withTitle(title, message, onCancel, confirmTxt, context,
+                cancelTxt, onSuccess)
+            : emptyTitle(
+                message, onCancel, confirmTxt, context, cancelTxt, onSuccess);
+      },
     );
   }
 
-  //static Future danger() {}
-
-  //static Future infos() {}
-
-  //static Future warning() {}
+  static Future warning(
+    BuildContext context, {
+    String title,
+    @required String message,
+    String cancelTxt,
+    String confirmTxt,
+    Function onSuccess,
+    Function onCancel,
+  }) {
+    return showDialog(
+      barrierDismissible: false,
+      context: context,
+      builder: (BuildContext context) {
+        return title != null
+            ? withTitle(title, message, onCancel, confirmTxt, context,
+                cancelTxt, onSuccess)
+            : emptyTitle(
+                message, onCancel, confirmTxt, context, cancelTxt, onSuccess);
+      },
+    );
+  }
 
   //static Future message() {}
 }
