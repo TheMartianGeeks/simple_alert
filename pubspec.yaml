@@ -1,5 +1,5 @@
 name: simple_alert
-description: To be able to show a custom alert box easily.
+description: Simple alert is an easy to use and customizable alert box, this package takes into account different types of alerts.
 version: 0.0.1
 author: The Martian Geeks <contact@martiangeeks.com>
 homepage: https://github.com/TheMartianGeeks/simple_alert
